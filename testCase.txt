@@ -1,0 +1,56 @@
+/***************************************************************/
+/** program for CLD design contest 2023 (Version 2023-05-14a) **/
+/** do not modify this code                                   **/
+/***************************************************************/
+initial begin
+cm_ram[ 0] = 32'h00000033; //     add  x0,  x0,  x0
+cm_ram[ 1] = 32'h00000033; //     add  x0,  x0,  x0
+cm_ram[ 2] = 32'h00000a13; //     addi x20, x0,  0
+cm_ram[ 3] = 32'h00300a93; //     addi x21, x0,  3
+cm_ram[ 4] = 32'h00000633; //     add  x12, x0,  x0
+cm_ram[ 5] = 32'h00000593; // L03:addi x11, x0,  0
+cm_ram[ 6] = 32'h40000413; //     addi x8,  x0,  1024
+cm_ram[ 7] = 32'h40040413; //     addi x8,  x8,  1024
+cm_ram[ 8] = 32'h00000493; //     addi x9,  x0,  0
+cm_ram[ 9] = 32'h00000513; //     addi x10, x0,  0
+cm_ram[10] = 32'h00b52023; // L01:sw   x11, 0(x10)
+cm_ram[11] = 32'h00148493; //     addi x9,  x9,  1
+cm_ram[12] = 32'h00458593; //     addi x11, x11, 4
+cm_ram[13] = 32'h00959cb3; //     sll  x25, x11, x9
+cm_ram[14] = 32'h009cdd33; //     srl  x26, x25, x9
+cm_ram[15] = 32'h00058593; //     addi x11, x11, 0
+cm_ram[16] = 32'h00450513; //     addi x10, x10, 4
+cm_ram[17] = 32'h00940463; //     beq  x8,  x9,  L04
+cm_ram[18] = 32'hfe0410e3; //     bne  x8,  x0,  L01
+cm_ram[19] = 32'h40000413; // L04:addi x8,  x0,  1024
+cm_ram[20] = 32'h40040413; //     addi x8,  x8,  1024
+cm_ram[21] = 32'h00000493; //     addi x9,  x0,  0
+cm_ram[22] = 32'h00000513; //     addi x10, x0,  0
+cm_ram[23] = 32'h00052583; // L02:lw   x11, 0(x10)
+cm_ram[24] = 32'h00148493; //     addi x9,  x9,  1
+cm_ram[25] = 32'h00450513; //     addi x10, x10, 4
+cm_ram[26] = 32'h00b60633; //     add  x12, x12, x11
+cm_ram[27] = 32'h00160613; //     addi x12, x12, 1
+cm_ram[28] = 32'hfff60613; //     addi x12, x12, -1
+cm_ram[29] = 32'h00160613; //     addi x12, x12, 1
+cm_ram[30] = 32'h00160613; //     addi x12, x12, 1
+cm_ram[31] = 32'hfff60613; //     addi x12, x12, -1
+cm_ram[32] = 32'h00160613; //     addi x12, x12, 1
+cm_ram[33] = 32'hffe60613; //     addi x12, x12, -2
+cm_ram[34] = 32'hfc941ae3; //     bne  x8,  x9,  L02
+cm_ram[35] = 32'h015d5d33; //     srl  x26, x26, x21
+cm_ram[36] = 32'h001a0a13; //     addi x20, x20, 1
+cm_ram[37] = 32'h01140413; //     addi x8,  x8,  0x11
+cm_ram[38] = 32'h01240413; //     addi x8,  x8,  0x12
+cm_ram[39] = 32'h01340413; //     addi x8,  x8,  0x13
+cm_ram[40] = 32'h01440413; //     addi x8,  x8,  0x14
+cm_ram[41] = 32'hf75a18e3; //     bne  x20, x21, L03
+cm_ram[42] = 32'h00000033; //     add  x0,  x0,  x0
+cm_ram[43] = 32'h00060f33; //     add  x30, x12, x0
+cm_ram[44] = 32'h000f0033; //     add  x0,  x30, x0
+cm_ram[45] = 32'h00000033; //     add  x0,  x0,  x0
+cm_ram[46] = 32'h00000033; //     add  x0,  x0,  x0
+cm_ram[47] = 32'h00000033; //     add  x0,  x0,  x0
+cm_ram[48] = 32'h00000033; //     add  x0,  x0,  x0
+cm_ram[49] = 32'h00000033; //     add  x0,  x0,  x0
+end
